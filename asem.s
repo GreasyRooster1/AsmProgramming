@@ -1,5 +1,6 @@
 .global _start
-.intel_syntax noprefix
 
 _start:
-    
+    mov %eax, 60
+    mov %edi, 69
+    syscall

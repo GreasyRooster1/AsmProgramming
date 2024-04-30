@@ -1,5 +1,5 @@
 @ECHO OFF
 cls
-as .\asem.s -o asem.o
+as .\asem.s -msyntax=intel  -o asem.o
 gcc -o asem asem.o -nostdlib -static
 .\asem.exe
