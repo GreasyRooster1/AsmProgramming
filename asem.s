@@ -1,14 +1,10 @@
 .section .data
+
 .section .text
+
 .globl _start
 _start:
-movl $1, %eax # this is the linux kernel command
-# number (system call) for exiting
-# a program
-movl $0, %ebx # this is the status number we will
-# return to the operating system.
-# Change this around and it will
-# return different things to
-# echo $?
-int $0x80 # this wakes up the kernel to run
-# the exit command
+    movl $1, %eax # 1 is the syscall id for exiting
+    movl $0, %ebx # this is "passed" into the syscall to exit with 0
+    int $0x80 # causes an interupt, transfering to linux (running the code?)
+    
